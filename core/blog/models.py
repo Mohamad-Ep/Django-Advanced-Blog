@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 from django.utils.translation import gettext_lazy as _
-from accounts.models import User
 # __________________________________________________________
 
 class Post(models.Model):   
@@ -15,7 +14,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(default=datetime.now,verbose_name='تاریخ انتشار')
     image = models.ImageField(null=True,blank=True,verbose_name='عکس مقاله')
     
-    author = models.ForeignKey(User, verbose_name='نویسنده', on_delete=models.CASCADE,related_name='blogs')
+    author = models.ForeignKey('accounts.Profile', verbose_name='نویسنده', on_delete=models.CASCADE,related_name='blogs')
     category = models.ForeignKey("Category", verbose_name='دسته بندی', on_delete=models.CASCADE,related_name='blogs')
     
     def __str__(self):
