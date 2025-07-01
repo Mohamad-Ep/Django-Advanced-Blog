@@ -14,9 +14,10 @@
         <ul>
             {% for post in posts %}
                 <li>
-                    <h4>{{post}}</h4>
-                    <span>{{post.published_date}}</span><br><br>
-                    <div>
+                    <h3>{{post}}</h3>
+                    <span>{{post.published_date}}</span>
+                    <h4>نویسنده : {{post.author.first_name}} {{post.author.last_name}}</h4>
+                    <div><br><br>
                         <a href="{% url 'blog:post_details' pk=post.id %}">
                             <button>Details Post</button>
                         </a>
