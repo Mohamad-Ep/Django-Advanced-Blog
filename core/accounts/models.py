@@ -82,7 +82,7 @@ class Profile(models.Model):
         
 
 """
-Signal for reate Profile after created User ↓
+Signal for Create Profile after created User ↓
 """
 @receiver(post_save,sender=User)
 def create_profile(sender, instance, created, **kwargs):
