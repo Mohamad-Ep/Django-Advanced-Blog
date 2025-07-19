@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,include
 from .views import (indexView,IndexView,RedirectDarsman,
                     PostList,PostDetailsView,PostCreateViewByForm,
                     PostCreateView,PostUpdateView,PostDeleteView)
@@ -24,6 +24,8 @@ urlpatterns = [
     path('post/update/<int:pk>/', PostUpdateView.as_view(), name='post_update'),
     path('post/delete/<int:pk>/', PostDeleteView.as_view(), name='post_delete'),
     
+    # api-v1
+    path('api/v1/', include('blog.api.v1.urls', namespace='api-v1'), name='api-v1'),
     
 ]
 

@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 # __________________________________________________________
 
 class Post(models.Model):   
@@ -19,6 +20,10 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_api_url(self):
+        return reverse("blog:api-v1:post_details", kwargs={"pk": self.pk})
+    
     
     class Meta:
         verbose_name = 'مقاله'

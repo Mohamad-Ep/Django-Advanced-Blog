@@ -36,3 +36,4 @@ django-environ
 django-versatileimagefield
 jdatetime
 python-decouple
+markdown
