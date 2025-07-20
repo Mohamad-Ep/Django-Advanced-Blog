@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     
+    # 'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
+    'drf_yasg',
+    
     # apps
     'accounts',
     'blog',

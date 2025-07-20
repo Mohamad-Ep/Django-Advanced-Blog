@@ -37,3 +37,4 @@ django-versatileimagefield
 jdatetime
 python-decouple
 markdown
+drf-yasg[validation]
