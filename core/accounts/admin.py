@@ -6,9 +6,9 @@ from .models import User,Profile
 
 class CustomUserAdmin(UserAdmin):
     model = User
-    list_display = ('email','created_date','updated_date','is_active','is_staff','is_superuser')
-    ordering = ('created_date',)
-    search_fields = ('email',)
+    list_display = ('email','created_date','updated_date','is_active','is_staff','is_superuser','is_verficated')
+    ordering = ('created_date','is_verficated')
+    search_fields = ('email','is_verficated')
     
     fieldsets = (
         (_('Authentication'), {"fields": ("email", "password")}),
@@ -19,6 +19,7 @@ class CustomUserAdmin(UserAdmin):
                     "is_active",
                     "is_staff",
                     "is_superuser",
+                    "is_verficated",
                     "groups",
                     "user_permissions",
                 ),
@@ -31,7 +32,7 @@ class CustomUserAdmin(UserAdmin):
             "Create User",
             {
                 "classes": ("wide",),
-                "fields": ("email", "usable_password", "password1", "password2"),
+                "fields": ("email", "usable_password", "password1", "password2","is_verficated"),
             },
         ),
     )

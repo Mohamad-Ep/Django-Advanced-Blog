@@ -36,5 +36,6 @@ django-environ
 django-versatileimagefield
 jdatetime
 python-decouple
-markdown
+drf-yasg
 drf-yasg[validation]
+django-mail-templated

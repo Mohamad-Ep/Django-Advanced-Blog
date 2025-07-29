@@ -10,6 +10,7 @@ from accounts.models import Profile
 # __________________________________________________________
 
 class CategorySerializer(serializers.ModelSerializer):
+    blogs = serializers.PrimaryKeyRelatedField(many=True,read_only=True)
     class Meta:
         model = Category
         fields = '__all__'
