@@ -16,32 +16,86 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200, verbose_name='نام دسته بندی')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=200, verbose_name="نام دسته بندی"),
+                ),
             ],
             options={
-                'verbose_name': 'دسته مقاله',
-                'verbose_name_plural': 'دسته های مقاله',
+                "verbose_name": "دسته مقاله",
+                "verbose_name_plural": "دسته های مقاله",
             },
         ),
         migrations.CreateModel(
-            name='Post',
+            name="Post",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=50, verbose_name='عنوان مقاله')),
-                ('status', models.BooleanField(default=False, verbose_name='فعال/غیرفعال')),
-                ('created_date', models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')),
-                ('updated_date', models.DateTimeField(auto_now=True, verbose_name='تاریخ ویرایش')),
-                ('published_date', models.DateTimeField(default=datetime.datetime.now, verbose_name='تاریخ انتشار')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='', verbose_name='عکس مقاله')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blogs', to=settings.AUTH_USER_MODEL, verbose_name='نویسنده')),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blogs', to='blog.category', verbose_name='دسته بندی')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=50, verbose_name="عنوان مقاله")),
+                (
+                    "status",
+                    models.BooleanField(default=False, verbose_name="فعال/غیرفعال"),
+                ),
+                (
+                    "created_date",
+                    models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد"),
+                ),
+                (
+                    "updated_date",
+                    models.DateTimeField(auto_now=True, verbose_name="تاریخ ویرایش"),
+                ),
+                (
+                    "published_date",
+                    models.DateTimeField(
+                        default=datetime.datetime.now, verbose_name="تاریخ انتشار"
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="", verbose_name="عکس مقاله"
+                    ),
+                ),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="blogs",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="نویسنده",
+                    ),
+                ),
+                (
+                    "category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="blogs",
+                        to="blog.category",
+                        verbose_name="دسته بندی",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'مقاله',
-                'verbose_name_plural': 'مقاله ها',
+                "verbose_name": "مقاله",
+                "verbose_name_plural": "مقاله ها",
             },
         ),
     ]

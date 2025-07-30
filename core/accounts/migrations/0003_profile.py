@@ -8,25 +8,55 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0002_remove_user_first_name_remove_user_last_name_and_more'),
+        ("accounts", "0002_remove_user_first_name_remove_user_last_name_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Profile',
+            name="Profile",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(max_length=50, verbose_name='نام')),
-                ('last_name', models.CharField(max_length=100, verbose_name='نام خانوادگی')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='', verbose_name='عکس')),
-                ('description', models.TextField(verbose_name='توضیحات')),
-                ('created_date', models.DateTimeField(auto_now_add=True, verbose_name='تاریخ درج')),
-                ('updated_date', models.DateTimeField(auto_now=True, verbose_name='تاریخ ویرایش')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='profiles', to=settings.AUTH_USER_MODEL, verbose_name='کاربر')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("first_name", models.CharField(max_length=50, verbose_name="نام")),
+                (
+                    "last_name",
+                    models.CharField(max_length=100, verbose_name="نام خانوادگی"),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="", verbose_name="عکس"
+                    ),
+                ),
+                ("description", models.TextField(verbose_name="توضیحات")),
+                (
+                    "created_date",
+                    models.DateTimeField(auto_now_add=True, verbose_name="تاریخ درج"),
+                ),
+                (
+                    "updated_date",
+                    models.DateTimeField(auto_now=True, verbose_name="تاریخ ویرایش"),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="profiles",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="کاربر",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'پروفایل کاربر',
-                'verbose_name_plural': 'پروفایل کاربران',
+                "verbose_name": "پروفایل کاربر",
+                "verbose_name_plural": "پروفایل کاربران",
             },
         ),
     ]

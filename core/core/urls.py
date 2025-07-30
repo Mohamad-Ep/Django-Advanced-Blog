@@ -14,8 +14,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.documentation import include_docs_urls
@@ -29,35 +30,42 @@ from drf_yasg import openapi
 # __________________________________________________________________
 
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Blog Api",
-      default_version='v1',
-      description="This is Test Blog Api",
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="contact@snippets.local"),
-      license=openapi.License(name="MIT License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Blog Api",
+        default_version="v1",
+        description="This is Test Blog Api",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="contact@snippets.local"),
+        license=openapi.License(name="MIT License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     # path("accounts/", include("accounts.urls")),
-    path('accounts/', include('accounts.urls', namespace='accounts'), name='accounts'),
-    path('blog/', include('blog.urls', namespace='blog'), name='blog'),
-    
-    path('api-auth/', include('rest_framework.urls')),                  # Basic Auth for DRF
-    path('api-docs/', include_docs_urls(title='Api Docs Sample')),      # Api-docs for rest_framework
-    
+    path("accounts/", include("accounts.urls", namespace="accounts"), name="accounts"),
+    path("blog/", include("blog.urls", namespace="blog"), name="blog"),
+    path("api-auth/", include("rest_framework.urls")),  # Basic Auth for DRF
+    path(
+        "api-docs/", include_docs_urls(title="Api Docs Sample")
+    ),  # Api-docs for rest_framework
     # swagger
-   path('swagger/output.json', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path(
+        "swagger/output.json",
+        schema_view.without_ui(cache_timeout=0),
+        name="schema-json",
+    ),
+    path(
+        "swagger/",
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
+    ),
+    path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
 ]
 
 # media and static config for development
 # if settings.DEBUG:
 #     urlpatterns+= static(settings.MEDIA_URL, dosument_root=settings.MEDIA_ROOT)
-    

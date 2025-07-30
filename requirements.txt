@@ -39,3 +39,5 @@ python-decouple
 drf-yasg
 drf-yasg[validation]
 django-mail-templated
+black
+flake8

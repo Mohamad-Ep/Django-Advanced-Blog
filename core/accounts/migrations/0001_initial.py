@@ -7,28 +7,57 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='User',
+            name="User",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('password', models.CharField(max_length=128, verbose_name='password')),
-                ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
-                ('first_name', models.CharField(max_length=20, verbose_name='نام')),
-                ('last_name', models.CharField(max_length=20, verbose_name='نام خانوادگی')),
-                ('email', models.EmailField(max_length=128, unique=True, verbose_name='ایمیل')),
-                ('created_date', models.DateTimeField(auto_now_add=True, verbose_name='تاریخ درج')),
-                ('updated_date', models.DateTimeField(auto_now=True, verbose_name='تاریخ ویرایش')),
-                ('is_active', models.BooleanField(default=False, verbose_name='فعال/غیرفعال')),
-                ('is_staff', models.BooleanField(default=False)),
-                ('is_superuser', models.BooleanField(default=False)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("password", models.CharField(max_length=128, verbose_name="password")),
+                (
+                    "last_login",
+                    models.DateTimeField(
+                        blank=True, null=True, verbose_name="last login"
+                    ),
+                ),
+                ("first_name", models.CharField(max_length=20, verbose_name="نام")),
+                (
+                    "last_name",
+                    models.CharField(max_length=20, verbose_name="نام خانوادگی"),
+                ),
+                (
+                    "email",
+                    models.EmailField(
+                        max_length=128, unique=True, verbose_name="ایمیل"
+                    ),
+                ),
+                (
+                    "created_date",
+                    models.DateTimeField(auto_now_add=True, verbose_name="تاریخ درج"),
+                ),
+                (
+                    "updated_date",
+                    models.DateTimeField(auto_now=True, verbose_name="تاریخ ویرایش"),
+                ),
+                (
+                    "is_active",
+                    models.BooleanField(default=False, verbose_name="فعال/غیرفعال"),
+                ),
+                ("is_staff", models.BooleanField(default=False)),
+                ("is_superuser", models.BooleanField(default=False)),
             ],
             options={
-                'verbose_name': 'کاربر',
-                'verbose_name_plural': 'کاربران',
+                "verbose_name": "کاربر",
+                "verbose_name_plural": "کاربران",
             },
         ),
     ]

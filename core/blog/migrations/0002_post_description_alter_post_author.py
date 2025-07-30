@@ -7,19 +7,24 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0003_profile'),
-        ('blog', '0001_initial'),
+        ("accounts", "0003_profile"),
+        ("blog", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='description',
-            field=models.TextField(blank=True, null=True, verbose_name='توضیحات'),
+            model_name="post",
+            name="description",
+            field=models.TextField(blank=True, null=True, verbose_name="توضیحات"),
         ),
         migrations.AlterField(
-            model_name='post',
-            name='author',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blogs', to='accounts.profile', verbose_name='نویسنده'),
+            model_name="post",
+            name="author",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="blogs",
+                to="accounts.profile",
+                verbose_name="نویسنده",
+            ),
         ),
     ]
