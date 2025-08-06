@@ -39,7 +39,9 @@ python-decouple
 drf-yasg
 drf-yasg[validation]
 django-mail-templated
+djoser
 black
 flake8
 pytest
 pytest-django
+coreapi
