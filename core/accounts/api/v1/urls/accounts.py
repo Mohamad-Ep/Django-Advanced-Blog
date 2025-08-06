@@ -28,7 +28,6 @@ urlpatterns = [
         name="activation-resend",
     ),
     # reset password
-    
     # login jwt
     # path('jwt/create/', TokenObtainPairView.as_view(), name='jwt-create'),
     path("jwt/create/", views.CustomTokenObtainPairView.as_view(), name="jwt-create"),
