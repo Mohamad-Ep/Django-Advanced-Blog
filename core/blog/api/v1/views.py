@@ -5,7 +5,6 @@ from .serializers import PostSerializer, CategorySerializer
 from ...models import Post, Category
 from rest_framework import status
 from rest_framework import permissions
-from rest_framework.views import APIView
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.generics import (

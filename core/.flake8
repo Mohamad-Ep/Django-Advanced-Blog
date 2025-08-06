@@ -11,4 +11,5 @@ exclude =
     __init__.py
 
 ignore =
-    E501
+    E501,
+    F401

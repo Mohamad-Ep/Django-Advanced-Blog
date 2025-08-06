@@ -16,7 +16,6 @@ from rest_framework import permissions
 from rest_framework_simplejwt.views import TokenObtainPairView
 from accounts.models import User, Profile
 from django.shortcuts import get_object_or_404
-from django.core.mail import send_mail
 from mail_templated import send_mail, EmailMessage
 from ..utils import EmailThread
 from rest_framework_simplejwt.tokens import RefreshToken
