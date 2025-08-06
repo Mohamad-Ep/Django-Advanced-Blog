@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: true
+    - name: Setup Docker Compose
+      run: docker compose up -d
+    - name: Wait for containers to be ready
+      run: sleep 10
+    - name: Run Testing 
+      run: docker exec djnago-backend sh -c "flake8 && pytest ."
