@@ -6,9 +6,10 @@ exclude =
     *.py[co],
     __pycache__,
     venv,
-    .env
-    settings.py
-    __init__.py
+    .env,
+    settings.py,
+    __init__.py,
+    insert_data.py
 
 ignore =
     E501,
