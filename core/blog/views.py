@@ -148,3 +148,11 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
 
 # __________________________________________________________
+
+
+# get api data by JQuery (front-end)
+class PostListApi(TemplateView):
+    template_name = "blog/post_list_api.html"
+
+
+# __________________________________________________________
