@@ -47,3 +47,4 @@ pytest-django
 coreapi
 Faker
 django-cors-headers
+locust
