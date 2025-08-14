@@ -48,3 +48,6 @@ coreapi
 Faker
 django-cors-headers
 locust
+redis
+celery
+django-celery-beat

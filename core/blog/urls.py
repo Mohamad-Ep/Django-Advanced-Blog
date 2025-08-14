@@ -38,7 +38,7 @@ urlpatterns = [
     path("post/create/", PostCreateView.as_view(), name="post_create"),
     path("post/update/<int:pk>/", PostUpdateView.as_view(), name="post_update"),
     path("post/delete/<int:pk>/", PostDeleteView.as_view(), name="post_delete"),
-    path("posts/api/", PostListApi.as_view(), name="api-posts"),    # get api by jquery
+    path("posts/api/", PostListApi.as_view(), name="api-posts"),  # get api by jquery
     # api-v1
     path("api/v1/", include("blog.api.v1.urls", namespace="api-v1"), name="api-v1"),
 ]
