@@ -51,3 +51,4 @@ locust
 redis
 celery
 django-celery-beat
+django-redis
