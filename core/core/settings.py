@@ -131,7 +131,7 @@ TIME_ZONE = "Asia/Tehran"
 
 USE_I18N = True
 
-USE_TZ = False
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -203,7 +203,7 @@ SIMPLE_JWT = {
 
 # __________________________________________________________
 
-# Develop Email Settings
+# Develop Email Settings - smtp4dev
 
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"        # برای تست از طریق کنسول
 
@@ -259,4 +259,5 @@ CACHES = {
         },
     }
 }
+
 # __________________________________________________________

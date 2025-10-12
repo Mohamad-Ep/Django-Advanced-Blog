@@ -137,6 +137,7 @@ class ProfileApiView(generics.RetrieveUpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
+    # lookup_field = 'id'
 
     def get_object(self):
         obj = get_object_or_404(self.queryset, user=self.request.user)
@@ -205,7 +206,7 @@ class ActivationApiView(APIView):
         except ExpiredSignatureError:
             return Response({"details": "token is Expired"})
 
-        except ExpiredSignatureError:
+        except InvalidTokenError:
             return Response({"details": "token is not valid"})
 
 

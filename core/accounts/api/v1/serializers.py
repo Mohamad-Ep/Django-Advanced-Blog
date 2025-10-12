@@ -141,6 +141,8 @@ class ProfileSerializer(serializers.ModelSerializer):
             "created_date",
         ]
 
+        extra_kwrgs = {"created_date": {"created_date": True}}
+
 
 # __________________________________________________________
 

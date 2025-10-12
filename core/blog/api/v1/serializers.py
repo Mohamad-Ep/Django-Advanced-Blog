@@ -29,6 +29,10 @@ class PostSerializer(serializers.ModelSerializer):
     relative_url = serializers.URLField(source="get_absolute_api_url", read_only=True)
     absolute_url = serializers.SerializerMethodField(method_name="get_abs_url")
 
+    # extra_kwargs = {
+    #     'author':{'read_only':True}
+    # }
+
     class Meta:
         model = Post
         fields = [
